@@ -19,7 +19,7 @@ public class RadixSort {
         This outer loop is O(s) where is the length of the longest string in the array since this runs for maxlength which is
         the length of the longest string in teh given array
          */
-        //count array
+        //count array O(n* (s+n+n))
         for(int j = maxlength -1; j >= 0; j--){
             int[] count = new int[27];
 
@@ -35,7 +35,7 @@ public class RadixSort {
 
             /*
             This inner while loop runs for the O(n) where n is the amount of strings in our arraylist, because we have do a constant amount per iteration.
-            Note : that this is a nested loop!
+            Note : that this is a nested loop! -> O(n) * O(s) -> O(n*s)
              */
             while(sizeOfList > -1) {
                 String string = list.get(sizeOfList);
@@ -94,7 +94,7 @@ public class RadixSort {
         }
         //end of outermost loop
 
-        //Time complexity is O(s) * O(n+n+n)  = O(s*3n) = O(s*n)
+        //Time complexity is O(s) * O(n+n+n) => O(s * 3n) => O(s*n)
 
         //Space complexity is O(n)
 
